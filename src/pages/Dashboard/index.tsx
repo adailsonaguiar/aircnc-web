@@ -23,11 +23,15 @@ export default function Dashboard() {
             <img src={spot['thumbnail_url']} />
 
             <strong>{spot['company']}</strong>
-            <span>{spot['price'] ? `R$${spot['price']}/ dia` : 'GRATUITO'}</span>
+            <span>
+              {spot['price'] ? `R$${spot['price']}/ dia` : 'GRATUITO'}
+            </span>
           </li>
         ))}
       </ul>
-      <Link to='/new'>Cadastrar novo Spot</Link>
+      <Link to='/new'>
+        <button className='btn'>Cadastrar novo Spot</button>
+      </Link>
     </>
   );
 }

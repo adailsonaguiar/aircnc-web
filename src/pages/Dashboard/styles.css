@@ -10,6 +10,7 @@ ul.spot-list {
 ul.spot-list li {
   display: flex;
   flex-direction: column;
+  margin: 3px;
 }
 
 ul.spot-list li img {
@@ -22,7 +23,7 @@ ul.spot-list li img {
 
 ul.spot-list li span {
   font-size: 17px;
-  color: #444;
+  color: rgb(131, 131, 131);
 }
 ul.spot-list li strong {
   margin-top: 10px;
