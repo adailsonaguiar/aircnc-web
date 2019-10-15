@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import camera from '../../assets/camera.png';
+import './styles.css';
+import { url } from 'inspector';
 
 export default function NewSpot() {
   const [company, setCompany] = useState('');
   const [techs, setTechs] = useState('');
   const [price, setPrice] = useState('');
+  const [thumbnail, setThumbnail] = useState(null);
 
+  const preview = useMemo(() => {
+    return thumbnail ? URL.createObjectURL(thumbnail) : null;
+  }, [thumbnail]);
   const handleSubmit = () => {};
 
   return (
     <form onSubmit={handleSubmit}>
+      <label id='thumbnail' style={{ backgroundImage: `url(${preview})` }}>
+        <input
+          type='file'
+          onChange={event => setThumbnail(event.target.files[0])}
+        />
+        <img src={camera} style={{ height: '20px' }} />
+      </label>
       <label htmlFor='company'>Empresa *</label>
       <input
         id='company'

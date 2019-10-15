@@ -88,3 +88,8 @@ button {
 .btn:hover {
   background: #ff4444;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
